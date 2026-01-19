@@ -11,7 +11,7 @@ const projects = [
     title: "Organogram Workspace",
     description:
       "Organogram Workspace is an all-in-one SAAS platform for business operations by integrating multiple HR, payroll, and performance management tools into a single unified workspace. It serves organizations of all sizes with apps that streamline workforce management, automate payroll, and enhance employee performance tracking.",
-    image: "/Images/workspace.jpg",
+    image: "/Images/workspace.png",
     bgImage: "/Images/project-background/bg1.png",
     link: "https://workspace.organogram.ltd/",
   },
@@ -110,7 +110,7 @@ const ProjectListings = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 text-[10px] md:text-xs flex items-center gap-1 text-[#6e06f2] font-medium hover:underline transition-all duration-300"
+                className="mt-2 text-[10px] md:text-xs lg:text-[0.875rem] flex items-center gap-1 text-[#6e06f2] font-medium hover:underline transition-all duration-300"
               >
                 View link <GoArrowUpRight />
               </Link>

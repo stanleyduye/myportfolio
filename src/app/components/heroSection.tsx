@@ -54,10 +54,10 @@ const HeroSection = () => {
         <div className="flex flex-col text-[#222] my-3">
           <div className="flex items-center">
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[5.5rem] xl:text-[6.25rem] font-bold text-[#6e06f2] leading-none">
-              Soft
+              Front
             </h1>
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[5.5rem] xl:text-[6.25rem] font-bold leading-none">
-              ware
+              end
             </h1>
           </div>
           <h1 className="text-[3rem] sm:text-[4rem] md:text-[5.5rem] xl:text-[6.25rem] font-bold leading-none">
@@ -67,8 +67,8 @@ const HeroSection = () => {
 
         <Paragraph>
           I’m a software engineer with a strong specialization in{" "}
-          <b>frontend development,</b> creating responsive and user-friendly
-          websites and applications
+          <b>frontend software development,</b> creating responsive and
+          user-friendly websites and applications
         </Paragraph>
 
         <div className="flex gap-4 items-center mt-5 md:mt-8">
