@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
+import EnhancedSectionTitle from "../shared/EnhancedSectionTitle";
 import { PageTitle } from "../shared/PageTitle";
 import { Paragraph } from "../shared/Typography";
-import EnhancedSectionTitle from "../shared/EnhancedSectionTitle";
 import Banner from "./components/banner";
 import MyStory from "./components/myStory";
 
@@ -57,18 +57,18 @@ const skills = [
   },
 ];
 
-const fadeInVariant = {
+const fadeInVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: {
+  visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
-  show: {
+  visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
@@ -76,9 +76,9 @@ const container = {
   },
 };
 
-const skillItemVariant = {
+const skillItemVariant: Variants = {
   hidden: { opacity: 0, y: -20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const AboutModule = () => {

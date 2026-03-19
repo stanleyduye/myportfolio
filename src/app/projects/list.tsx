@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // 👈 Import Variants
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
@@ -54,12 +54,12 @@ const projects = [
   },
 ];
 
-const imageVariant = {
+const imageVariant: Variants = {
   hidden: { opacity: 0, y: -50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const textContainer = {
+const textContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -68,7 +68,7 @@ const textContainer = {
   },
 };
 
-const textItem = {
+const textItem: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
