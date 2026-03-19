@@ -37,7 +37,7 @@ const projects = [
     id: 7,
     title: "BuildByte",
     description:
-      "This is a project aimed to help businesses seamlessly build and manage their online presence. It offers a comprehensive suite of tools and services designed to simplify the process of creating, maintaining, and optimizing websites and digital platforms. With BuildByte, businesses can easily establish a strong online presence, enhance their digital marketing efforts, and effectively engage with their target audience.",
+      "This is a project aimed to help businesses seamlessly build and manage their online presence with the power of Artificial Intelligence. It offers a comprehensive suite of tools and services designed to simplify the process of creating, maintaining, and optimizing websites and digital platforms. With BuildByte, businesses can easily establish a strong online presence, enhance their digital marketing efforts, and effectively engage with their target audience.",
     image: "/Images/buildbyte.png",
     bgImage: "/Images/project-background/bg2.png",
     link: "https://app2.buildbyte.dev/fe",

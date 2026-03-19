@@ -20,24 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stanley Duye | Portfolio",
     description: "Software Engineer",
-    url: "https://stanleyduye.vercel.app/",
+    url: "https://duyestanley.netlify.app",
     siteName: "Stanley Duye's Portfolio",
-    images: [
-      {
-        url: "https://stanleyduye.vercel.app/meta-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Stanley Duye's photo",
-      },
-    ],
+
     locale: "en_US",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Stanley Duye | Portfolio",
-    description: "Software Engineer",
-    images: ["https://stanleyduye.vercel.app/meta-image.jpg"],
   },
 };
 
