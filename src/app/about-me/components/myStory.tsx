@@ -11,23 +11,19 @@ const MyStory = () => {
         quickly grew into passion, and I became a self-taught developer.
       </Paragraph>
       <Paragraph>
-        After the pandemic era, I landed my first internship at Adeoye Orimoloye
-        & Co, where I worked on the law firm’s website using Webflow. Shorlty
-        after, I transitioned to a role at a digital agency, where I started
-        gaining real life experience in writing codes. That experience opened
-        doors for me.
+        After the pandemic era, I landed my first opportunity at digital
+        marketing company called Go-mailer, where I worked as a MERN stack
+        developer. This experience provided me with the opportunity to learn and
+        grow in a dynamic and fast-paced environment. It was here where I
+        started gaining real life experience in writing codes. That experience
+        opened doors for me.
       </Paragraph>
       <Paragraph>
-        Later, I joined Sync Skill, a Nigerian-Australian tech company. There, I
-        contributed to a B2C web application and successfully implemented the
-        Stripe payment gateway, gaining valuable hands-on experience with
-        real-world product challenges.
-      </Paragraph>
-      <Paragraph>
-        I currently work at Organogram, an enterprise solutions company building
-        HR, payroll, and employee performance applications for organizations of
-        different sizes. Each step of this journey has sharpened my skills and
-        deepened my love for creating seamless and impactful user experiences.
+        Later in 2021, I joined Evince Nigeria lmited, which is an enterprise
+        solutions company building ERP solutions for HR, payroll, and employee
+        performance applications for organizations of different sizes. Each step
+        of this journey has sharpened my skills and deepened my love for
+        creating seamless and impactful user experiences.
       </Paragraph>
       <Paragraph>
         Looking ahead, I aspire to work on projects that cross continents,

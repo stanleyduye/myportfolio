@@ -14,20 +14,20 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Olamilekan Akanni | Portfolio",
+  title: "Stanley Duye | Portfolio",
   description: "Software Engineer",
   icons: "/favicon.ico",
   openGraph: {
-    title: "Olamilekan Akanni | Portfolio",
+    title: "Stanley Duye | Portfolio",
     description: "Software Engineer",
-    url: "https://olamilekanakanni.vercel.app/",
-    siteName: "Olamilekan Akanni's Portfolio",
+    url: "https://stanleyduye.vercel.app/",
+    siteName: "Stanley Duye's Portfolio",
     images: [
       {
-        url: "https://olamilekanakanni.vercel.app/meta-image.jpg",
+        url: "https://stanleyduye.vercel.app/meta-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Olamilekan Akanni's photo",
+        alt: "Stanley Duye's photo",
       },
     ],
     locale: "en_US",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olamilekan Akanni | Portfolio",
+    title: "Stanley Duye | Portfolio",
     description: "Software Engineer",
-    images: ["https://olamilekanakanni.vercel.app/meta-image.jpg"],
+    images: ["https://stanleyduye.vercel.app/meta-image.jpg"],
   },
 };
 

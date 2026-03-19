@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
 import { toast } from "sonner";
 import { PageTitle } from "../shared/PageTitle";
-import Link from "next/link";
 
 const Contact = () => {
   const [state, handleSubmit, reset] = useForm("xjkygdag");
@@ -31,7 +31,7 @@ const Contact = () => {
     const nameInput = form.elements.namedItem("name") as HTMLInputElement;
     const emailInput = form.elements.namedItem("email") as HTMLInputElement;
     const messageInput = form.elements.namedItem(
-      "message"
+      "message",
     ) as HTMLTextAreaElement;
 
     if (!nameInput.value || !emailInput.value || !messageInput.value) {
@@ -55,10 +55,10 @@ const Contact = () => {
             I'd love to hear from you. You can send me a direct message via the
             form below or email me at{" "}
             <Link
-              href="mailto:cyprusakanni@gmail.com"
+              href="mailto:stanleyduye@gmail.com"
               className="text-[#6e06f2] hover:underline"
             >
-              cyprusakanni@gmail.com
+              stanleyduye@gmail.com
             </Link>{" "}
             and I'll make sure to get back to you as soon as possible.
           </>

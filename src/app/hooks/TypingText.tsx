@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Typewriter = ({
   text,
@@ -42,7 +42,7 @@ const Typewriter = ({
 export default function Hero() {
   return (
     <div className="flex justify-center items-center h-screen">
-      <Typewriter text="Hey, I'm Olamilekan Akanni" className="font-poppins" />
+      <Typewriter text="Hello, I'm Stanley Duye" className="font-poppins" />
     </div>
   );
 }

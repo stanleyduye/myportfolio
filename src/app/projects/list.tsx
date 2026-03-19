@@ -1,11 +1,20 @@
 "use client";
 
-import Image from "next/image";
-import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { GoArrowUpRight } from "react-icons/go";
 
 const projects = [
+  {
+    id: 2,
+    title: "Go-Mailer",
+    description:
+      "Go-Mailer is a digital marketing company that provides email marketing services to businesses. They specialize in creating and managing email campaigns, designing templates, and analyzing campaign performance to help businesses effectively reach their target audience and achieve their marketing goals.",
+    image: "/Images/go-mailer.jpg",
+    bgImage: "/Images/project-background/bg2.png",
+    link: "https://go-mailer.com",
+  },
   {
     id: 1,
     title: "Organogram Workspace",
@@ -15,15 +24,7 @@ const projects = [
     bgImage: "/Images/project-background/bg1.png",
     link: "https://workspace.organogram.ltd/",
   },
-  {
-    id: 2,
-    title: "Oloja",
-    description:
-      "Oloja is a B2C marketplace that connects service providers and customers in Australia. It offers a wide range of products such as electronics, fashion items, baby sitting, plumbing, etc. The platform is built with a focus on user experience and performance, ensuring that users can easily find and purchase products they love.",
-    image: "/Images/oloja.jpg",
-    bgImage: "/Images/project-background/bg2.png",
-    link: "https://oloja.com.au/",
-  },
+
   {
     id: 3,
     title: "Workspace HR",
@@ -41,6 +42,15 @@ const projects = [
     image: "/Images/payroll.jpg",
     bgImage: "/Images/project-background/bg4.png",
     link: "https://payroll.organogram.app/",
+  },
+  {
+    id: 5,
+    title: "Workspace Performance (OKR)",
+    description:
+      "The Workspace Performance App is a comprehensive performance management solution designed to help businesses track, evaluate, and enhance employee performance. It offers tools for setting goals, providing feedback, conducting evaluations, and fostering continuous improvement, making it an essential tool for optimizing workforce productivity.",
+    image: "/Images/okr.jpg",
+    bgImage: "/Images/project-background/bg5.png",
+    link: "https://performance.organogram.app/",
   },
 ];
 

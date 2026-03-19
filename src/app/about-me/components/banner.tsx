@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Paragraph } from "../../shared/Typography";
 
@@ -12,6 +12,7 @@ const banner = [
       "JSON & data manipulation",
       "Code Optimization",
       "Caching Strategies",
+      "Performance Optimization",
       "Git/GitHub",
       "Styled-Components",
       "Sass/SCSS",
@@ -36,7 +37,6 @@ const banner = [
   {
     id: 3,
     list: [
-      "Webflow",
       "Problem-Solving & Debugging",
       "Effective Communication",
       "Leadership",
