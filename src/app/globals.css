@@ -5,7 +5,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Poppins", sans-serif;
+  font-family: "inter", sans-serif;
 }
 
 input:-webkit-autofill,

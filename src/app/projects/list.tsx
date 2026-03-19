@@ -48,18 +48,9 @@ const projects = [
     title: "Workspace HR",
     description:
       "The Workspace HR App in Organogram Workspace is a powerful, cloud-based solution designed to simplify and automate human resource management. It provides businesses with an all-in-one platform to manage employee data, track attendance, oversee performance, and enhance the overall employee experience.",
-    image: "/Images/hr.jpg",
+    image: "/Images/hr.png",
     bgImage: "/Images/project-background/bg3.png",
     link: "https://people.organogram.app/",
-  },
-  {
-    id: 4,
-    title: "Workspace Payroll",
-    description:
-      "The Workspace Payroll App is a powerful, automated payroll processing solution designed to simplify salary calculations, tax deductions, and compliance reporting. It ensures accurate, timely payments while reducing administrative workload, making it the perfect payroll management tool for businesses of all sizes.",
-    image: "/Images/payroll.jpg",
-    bgImage: "/Images/project-background/bg4.png",
-    link: "https://payroll.organogram.app/",
   },
   {
     id: 6,
@@ -70,83 +61,100 @@ const projects = [
     bgImage: "/Images/project-background/bg1.png",
     link: "https://marpcleaningservice.com.ng/",
   },
+  {
+    id: 4,
+    title: "Workspace Payroll",
+    description:
+      "The Workspace Payroll App is a powerful, automated payroll processing solution designed to simplify salary calculations, tax deductions, and compliance reporting. It ensures accurate, timely payments while reducing administrative workload, making it the perfect payroll management tool for businesses of all sizes.",
+    image: "/Images/payroll.png",
+    bgImage: "/Images/project-background/bg4.png",
+    link: "https://payroll.organogram.app/",
+  },
 ];
 
-const imageVariant: Variants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const textContainer: Variants = {
-  hidden: {},
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
   visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
 
-const textItem: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+const cardVariants: Variants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100, damping: 12 },
+  },
 };
 
 const ProjectListings = () => {
   return (
-    <div className="my-20 flex flex-col lg:flex-row flex-wrap gap-10 items-center justify-center">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       {projects.map((project) => (
         <motion.div
           key={project.id}
-          className="relative xs:w-[90%] sm:w-[80%] md:w-[70%] lg:w-[45%] max-h-[35rem] bg-cover bg-center flex flex-col items-center justify-between p-5 md:p-10 mx-auto rounded-xl"
-          style={{
-            backgroundImage: `url(${project.bgImage})`,
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          variants={cardVariants}
+          className="group relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
         >
-          <motion.div variants={imageVariant}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={300}
-              className="z-10 object-cover rounded-lg"
-            />
-          </motion.div>
+          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" />
 
-          <motion.div
-            variants={textContainer}
-            className="flex flex-col items-start gap-3 z-10 self-start mt-4"
-          >
-            <motion.h1
-              variants={textItem}
-              className="text-1xl md:text-2xl font-bold text-white"
-            >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+          <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+          <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
+            <div className="relative w-full h-48 md:h-56 mb-4 rounded-xl overflow-hidden shadow-lg ring-2 ring-white/20 group-hover:ring-green-400/50 transition-all duration-300">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Floating gradient dot (like in the title) */}
+              <motion.div
+                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+                transition={{ repeat: Infinity, duration: 3 }}
+                className="absolute top-2 right-2 w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-blue-500 shadow-lg"
+              />
+            </div>
+
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-md">
               {project.title}
-            </motion.h1>
+            </h3>
 
-            <motion.p
-              variants={textItem}
-              className="text-[#f9f9f9] text-xs md:text-sm"
-            >
+            <p className="text-sm md:text-base text-gray-100 line-clamp-3 mb-4 flex-grow drop-shadow">
               {project.description}
-            </motion.p>
+            </p>
 
-            <motion.div variants={textItem}>
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 text-[10px] md:text-xs lg:text-[0.875rem] flex items-center gap-1 text-[#6e06f2] font-medium hover:underline transition-all duration-300"
-              >
-                View link <GoArrowUpRight />
-              </Link>
-            </motion.div>
-          </motion.div>
+            <Link
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-green-300 font-medium hover:text-white transition-colors duration-200 group/link"
+            >
+              <span>View Project</span>
+              <GoArrowUpRight className="text-lg transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-200" />
+            </Link>
+          </div>
+
+          {/* Animated gradient border on hover */}
+          <div className="absolute inset-0 rounded-3xl p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-green-400 to-blue-500" />
+          </div>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

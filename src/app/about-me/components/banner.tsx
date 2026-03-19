@@ -82,7 +82,7 @@ const BannerRow = ({ row, direction }: { row: any; direction: number }) => {
             </Paragraph>
 
             {i < row.list.length - 1 && (
-              <span className="text-3xl mt-3 md:mt-4 lg:mt-5 mx-2 text-[#6e06f2]">
+              <span className="text-3xl mt-3 md:mt-4 lg:mt-5 mx-2 text-[#22c55e]">
                 •
               </span>
             )}

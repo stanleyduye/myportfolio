@@ -4,31 +4,42 @@ const MyStory = () => {
   return (
     <>
       <Paragraph>
-        My journey as a software engineer focusing on frontend development began
-        in 2020, during the COVID-19 lockdown. With the world on pause, I saw
-        the stay-at-home curfew as an opportunity to invest in myself, so I
-        dived into online classes on web development. What started as curiosity
-        quickly grew into passion, and I became a self-taught developer.
+        It was 2020. The world pressed pause, but I hit play on my future. I
+        dove headfirst into the rabbit hole of web development. What started as
+        “an escape” quickly turned into an obsession. Late nights, countless
+        tutorials, and a lot of trial and error later – I emerged as a
+        self‑taught frontend developer, ready to build.
       </Paragraph>
+
       <Paragraph>
-        After the pandemic era, I landed my first opportunity at digital
-        marketing company called Go-mailer, where I worked as a MERN stack
-        developer. This experience provided me with the opportunity to learn and
-        grow in a dynamic and fast-paced environment. It was here where I
-        started gaining real life experience in writing codes. That experience
-        opened doors for me.
+        My first real‑world stage? A nimble digital marketing startup called
+        <span className="font-semibold text-green-500"> Go‑Mailer</span>. There
+        I wasn’t just writing code – I was learning to ship features, fix bugs
+        at 2a.m., and collaborate with a team that moved fast. The MERN stack
+        became my playground, and every task and feature taught me that great
+        software is about more than syntax – it’s about solving real problems
+        for real people.
       </Paragraph>
+
       <Paragraph>
-        Later in 2021, I joined Evince Nigeria lmited, which is an enterprise
-        solutions company building ERP solutions for HR, payroll, and employee
-        performance applications for organizations of different sizes. Each step
-        of this journey has sharpened my skills and deepened my love for
-        creating seamless and impactful user experiences.
+        By late 2021 I levelled up to{" "}
+        <span className="font-semibold text-green-500">Evince Nigeria</span>, an
+        enterprise company building ERP solutions for HR, payroll, and
+        performance management. Here the scale was bigger, the challenges
+        juicier, and the user demands more complex. I honed my skills in React,
+        TypeScript, and performance optimization, learning how to build not just
+        for today’s users, but for the future of work.
       </Paragraph>
+
       <Paragraph>
-        Looking ahead, I aspire to work on projects that cross continents,
-        building digital solutions that connect people from different places and
-        make the world feel just a little closer.
+        Today, I’m not just looking back – I’m looking across borders. My dream?
+        To work on projects that span continents, building digital bridges that
+        connect people, cultures, and ideas. At the heart of my work lies a
+        passion for introducing solutions to problems while crafting
+        aesthetically pleasing applications. I thrive on the challenge of
+        marrying functionality with beauty, ensuring that every project I
+        undertake not only solves problems effectively but also delights the
+        senses.
       </Paragraph>
     </>
   );

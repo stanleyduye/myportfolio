@@ -1,11 +1,9 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-
 import EnhancedSectionTitle from "../shared/EnhancedSectionTitle";
 import { PageTitle } from "../shared/PageTitle";
 import { Paragraph } from "../shared/Typography";
-import Banner from "./components/banner";
 import MyStory from "./components/myStory";
 
 const skills = [
@@ -44,10 +42,6 @@ const skills = [
     ],
   },
   {
-    title: "Low Code",
-    list: ["Basic Knowledge of Bubble"],
-  },
-  {
     title: "Soft Skills",
     list: [
       "Problem-Solving & Debugging",
@@ -60,7 +54,8 @@ const skills = [
   },
 ];
 
-const fadeInVariant: Variants = {
+// Animation variants
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -69,7 +64,7 @@ const fadeInVariant: Variants = {
   },
 };
 
-const container: Variants = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -80,69 +75,104 @@ const container: Variants = {
 };
 
 const skillItemVariant: Variants = {
-  hidden: { opacity: 0, y: -20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  hidden: { opacity: 0, scale: 0.8 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
 };
 
 const AboutModule = () => {
   return (
-    <div className="py-10 mt-0 xl:mt-10">
-      <PageTitle
-        title={
-          <>
-            <span className="text-[#6e06f2]">About</span> Me
-          </>
-        }
-        paragraph="Crafting seamless and visually engaging user experiences is my passion. As a software engineer specialized in frontend development, I put my creativity and attention to detail into every project, turning ideas into responsive and functional websites and applications."
-      />
+    <section className="relative min-h-screen py-16 md:py-24 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+      {/* Background decorations (same as hero) */}
+      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-green-200 rounded-full blur-3xl opacity-20 -z-10" />
+      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-blue-200 rounded-full blur-3xl opacity-20 -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-200 rounded-full blur-3xl opacity-10 -z-10" />
 
-      <Banner />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Page Title with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <PageTitle
+            title={
+              <>
+                <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                  About
+                </span>{" "}
+                Me
+              </>
+            }
+            paragraph="I craft digital experiences that are not only visually stunning but also intuitively functional. With a passion for frontend development, I transform complex ideas into responsive, performant, and engaging web applications – one pixel at a time."
+          />
+        </motion.div>
 
-      <div className="flex flex-col my-20 gap-14 md:gap-24 lg:gap-28">
-        <EnhancedSectionTitle title="My Story">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col gap-2"
-          >
-            <MyStory />
-          </motion.div>
-        </EnhancedSectionTitle>
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-24"
+        >
+          <EnhancedSectionTitle title="My Story">
+            <div className="mt-6 prose prose-lg max-w-none text-gray-700">
+              <MyStory />
+            </div>
+          </EnhancedSectionTitle>
+        </motion.div>
 
-        <EnhancedSectionTitle title="Skills">
-          <div className="flex flex-col gap-10 mt-5">
-            {skills.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <motion.h3 className="text-[#222] leading-none text-[1.25rem] md:text-2xl">
-                  {skillGroup.title}
-                </motion.h3>
-
+        {/* Skills Section */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-24"
+        >
+          <EnhancedSectionTitle title="Skills">
+            <div className="mt-10 space-y-12">
+              {skills.map((skillGroup, index) => (
                 <motion.div
-                  variants={container}
-                  className="flex flex-wrap items-center justify-start gap-2 mt-2"
+                  key={index}
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="space-y-4"
                 >
-                  {skillGroup.list.map((item, idx) => (
-                    <motion.div key={idx} variants={skillItemVariant}>
-                      <Paragraph className="px-4 py-1 border-[1.5px] md:border-2 border-[#9498a0] rounded-3xl">
-                        {item}
-                      </Paragraph>
-                    </motion.div>
-                  ))}
+                  <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent inline-block">
+                    {skillGroup.title}
+                  </h3>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    className="flex flex-wrap gap-3"
+                  >
+                    {skillGroup.list.map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        variants={skillItemVariant}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="group relative"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+                        <Paragraph className="relative px-5 py-2 bg-white border border-gray-200 rounded-full text-gray-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-default">
+                          {item}
+                        </Paragraph>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </EnhancedSectionTitle>
+              ))}
+            </div>
+          </EnhancedSectionTitle>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
