@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { FaBars } from "react-icons/fa6";
-import { AiOutlineClose } from "react-icons/ai";
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { BiMessageRoundedDetail } from "react-icons/bi";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { BiMessageRoundedDetail } from "react-icons/bi";
+import { FaBars } from "react-icons/fa6";
 
 import { MessageButton } from "../shared/Button";
 
@@ -65,13 +64,7 @@ const NavBar = () => {
           whileHover="hover"
           initial="rest"
         >
-          <Image
-            src="/Images/newest.png"
-            alt="Logo"
-            width={150}
-            height={80}
-            className="w-[130px] md:w-[150px]"
-          />
+          <p className="text-2xl font-bold text-[#6e06f2]">StanleyDuye</p>
 
           <motion.div
             className="block w-2 h-2 bg-[#6605e3] rounded-full"

@@ -11,7 +11,7 @@ const projects = [
     title: "Go-Mailer",
     description:
       "Go-Mailer is a digital marketing company that provides email marketing services to businesses. They specialize in creating and managing email campaigns, designing templates, and analyzing campaign performance to help businesses effectively reach their target audience and achieve their marketing goals.",
-    image: "/Images/go-mailer.jpg",
+    image: "/Images/go-mailer.png",
     bgImage: "/Images/project-background/bg2.png",
     link: "https://go-mailer.com",
   },
@@ -22,7 +22,25 @@ const projects = [
       "Organogram Workspace is an all-in-one SAAS platform for business operations by integrating multiple HR, payroll, and performance management tools into a single unified workspace. It serves organizations of all sizes with apps that streamline workforce management, automate payroll, and enhance employee performance tracking.",
     image: "/Images/workspace.png",
     bgImage: "/Images/project-background/bg1.png",
-    link: "https://workspace.organogram.ltd/",
+    link: " https://organogram.ltd/workspace",
+  },
+  {
+    id: 5,
+    title: "Workspace Performance (OKR)",
+    description:
+      "The Workspace Performance App is a comprehensive performance management solution designed to help businesses track, evaluate, and enhance employee performance. It offers tools for setting goals, providing feedback, conducting evaluations, and fostering continuous improvement, making it an essential tool for optimizing workforce productivity.",
+    image: "/Images/okr.png",
+    bgImage: "/Images/project-background/bg1.png",
+    link: "https://okr.organogram.app/",
+  },
+  {
+    id: 7,
+    title: "BuildByte",
+    description:
+      "This is a project aimed to help businesses seamlessly build and manage their online presence. It offers a comprehensive suite of tools and services designed to simplify the process of creating, maintaining, and optimizing websites and digital platforms. With BuildByte, businesses can easily establish a strong online presence, enhance their digital marketing efforts, and effectively engage with their target audience.",
+    image: "/Images/buildbyte.png",
+    bgImage: "/Images/project-background/bg2.png",
+    link: "https://app2.buildbyte.dev/fe",
   },
 
   {
@@ -44,13 +62,13 @@ const projects = [
     link: "https://payroll.organogram.app/",
   },
   {
-    id: 5,
-    title: "Workspace Performance (OKR)",
+    id: 6,
+    title: "Marp Cleaning services",
     description:
-      "The Workspace Performance App is a comprehensive performance management solution designed to help businesses track, evaluate, and enhance employee performance. It offers tools for setting goals, providing feedback, conducting evaluations, and fostering continuous improvement, making it an essential tool for optimizing workforce productivity.",
-    image: "/Images/okr.jpg",
-    bgImage: "/Images/project-background/bg5.png",
-    link: "https://performance.organogram.app/",
+      "Marp Cleaning services is a professional cleaning company that provides comprehensive cleaning solutions for residential and commercial properties. They offer a wide range of services including deep cleaning, regular maintenance, and specialized cleaning for unique needs.",
+    image: "/Images/marp.png",
+    bgImage: "/Images/project-background/bg1.png",
+    link: "https://marpcleaningservice.com.ng/",
   },
 ];
 
@@ -103,7 +121,7 @@ const ProjectListings = () => {
           >
             <motion.h1
               variants={textItem}
-              className="text-2xl md:text-3xl font-bold text-white"
+              className="text-1xl md:text-2xl font-bold text-white"
             >
               {project.title}
             </motion.h1>

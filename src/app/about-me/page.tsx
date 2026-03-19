@@ -17,8 +17,8 @@ const skills = [
       "Javascript",
       "React.js",
       "Next.js",
-      "Vue.js",
       "Angular",
+      "React Native",
       "Typescript",
       "Tailwind CSS",
       "Material UI",
@@ -38,11 +38,14 @@ const skills = [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Golang",
+      "PostgreSQL",
+      "Ruby on Rails",
     ],
   },
   {
     title: "Low Code",
-    list: ["Webflow", "Basic Knowledge of Bubble"],
+    list: ["Basic Knowledge of Bubble"],
   },
   {
     title: "Soft Skills",
@@ -59,7 +62,7 @@ const skills = [
 
 const fadeInVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: {
+  show: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
@@ -68,7 +71,7 @@ const fadeInVariant: Variants = {
 
 const container: Variants = {
   hidden: { opacity: 0 },
-  visible: {
+  show: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
@@ -78,7 +81,7 @@ const container: Variants = {
 
 const skillItemVariant: Variants = {
   hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const AboutModule = () => {

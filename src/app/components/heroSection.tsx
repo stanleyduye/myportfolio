@@ -67,8 +67,8 @@ const HeroSection = () => {
 
         <Paragraph>
           I’m a software engineer with a strong specialization in{" "}
-          <b>frontend software development,</b> creating responsive and
-          user-friendly websites and applications
+          <b>frontend software development,</b> creating responsive, performant
+          and user-friendly web and mobile applications
         </Paragraph>
 
         <div className="flex gap-4 items-center mt-5 md:mt-8">

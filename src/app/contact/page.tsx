@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { PageTitle } from "../shared/PageTitle";
 
 const Contact = () => {
-  const [state, handleSubmit, reset] = useForm("xjkygdag");
+  const [state, handleSubmit, reset] = useForm("xqeynkvr");
 
   useEffect(() => {
     if (state.succeeded && state.errors === null) {
@@ -83,7 +83,7 @@ const Contact = () => {
                 type="text"
                 name="name"
                 placeholder="Your name"
-                className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#7f828b] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#7f828b] autofill:border-b-2 autofill:border-[#7f828b] text-[0.8rem] md:text-[1.25rem]"
+                className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#222] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#222] autofill:border-b-2 autofill:border-[#7f828b] text-[0.8rem] md:text-[1.25rem]"
               />
               <ValidationError
                 prefix="Name"
@@ -104,7 +104,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="Your email"
-                className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#7f828b] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#7f828b] autofill:border-b-2 autofill:border-[#7f828b] text-[0.8rem] md:text-[1.25rem]"
+                className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#222] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#222] autofill:border-b-2 autofill:border-[#7f828b] text-[0.8rem] md:text-[1.25rem]"
               />
               <ValidationError
                 prefix="Email"
@@ -125,7 +125,7 @@ const Contact = () => {
               id="message"
               name="message"
               placeholder="Write your message"
-              className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#7f828b] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#7f828b] autofill:border-b-2 autofill:border-[#7f828b]  min-h-40 text-[0.8rem] md:text-[1.25rem]"
+              className="w-full bg-transparent border-b-2 border-[#7f828b] text-[#222] focus:outline-none focus:caret-[#222] autofill:bg-transparent autofill:text-[#222] autofill:border-b-2 autofill:border-[#7f828b]  min-h-40 text-[0.8rem] md:text-[1.25rem]"
             />
             <ValidationError
               prefix="Message"
