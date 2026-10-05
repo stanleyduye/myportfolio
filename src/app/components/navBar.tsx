@@ -48,11 +48,11 @@ export default function NavBar() {
         }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
         </button>
-        <dialog ref={dialogRef} id="mobile-navigation" className="mobile-menu" aria-labelledby="menu-title" onClick={event => { if (event.target === event.currentTarget) {
+        <dialog ref={dialogRef} id="mobile-navigation" className="mobile-menu" aria-label="Navigation menu" onClick={event => { if (event.target === event.currentTarget) {
           const rect = event.currentTarget.getBoundingClientRect();
           if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeMenu();
         } }} onClose={() => { setIsOpen(false); triggerRef.current?.focus({ preventScroll: true }); }}>
-          <div className="mobile-menu-heading"><span id="menu-title">Navigation</span><button type="button" className="icon-button" onClick={closeMenu} aria-label="Close navigation menu" autoFocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" /></svg></button></div>
+          <div className="mobile-menu-heading"><button type="button" className="icon-button" onClick={closeMenu} aria-label="Close navigation menu" autoFocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" /></svg></button></div>
           <nav aria-label="Mobile navigation">
             {navItems.map(item => <Link key={item.href} href={item.href} onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
             <Link href="/contact" onClick={closeMenu} aria-current={pathname === "/contact" ? "page" : undefined}>Get in touch <GoArrowUpRight aria-hidden="true" /></Link>

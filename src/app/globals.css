@@ -70,8 +70,7 @@ main:focus { outline: none; }
 @starting-style {
   .mobile-menu[data-animated="true"][open] { opacity: 0; transform: scale(0.97); }
 }
-.mobile-menu-heading { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 12px 12px; }
-.mobile-menu-heading > span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.mobile-menu-heading { display: flex; align-items: center; justify-content: flex-end; padding: 0 4px 12px; }
 .mobile-menu nav { display: grid; gap: 4px; }
 .mobile-menu nav a { display: flex; align-items: center; justify-content: space-between; padding: 12px; border-radius: 8px; font-size: 1rem; }
 .mobile-menu nav a[aria-current="page"] { background: #eef4ef; color: var(--accent); }
