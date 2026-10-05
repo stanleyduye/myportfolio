@@ -7,6 +7,15 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const projects = [
   {
+    id: 8,
+    title: "BasheerCore Construction",
+    description:
+      "BasheerCore Construction is a Lagos-based construction company offering building and road construction, equipment rental, sand supply, dredging, and survey support. The website showcases its services and equipment, helping clients explore solutions and request project quotes.",
+    image: "/Images/basheercore.png",
+    bgImage: "/Images/project-background/bg2.png",
+    link: "https://basheercore.com/",
+  },
+  {
     id: 2,
     title: "Go-Mailer",
     description:
