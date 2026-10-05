@@ -1,108 +1,26 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-
-import { motion, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
-import MyStory from "../about-me/components/myStory";
+import Link from "next/link";
+import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
 import ProjectListings from "../projects/list";
-import { PageNavigationButton } from "../shared/Button";
-import EnhancedHomepageSectionTitle from "../shared/EnhancedHomepageSectionTitle";
 
-const HomepageSections = () => {
-  const router = useRouter();
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-
-  // Animation variants
-  const stripeVariants: Variants = {
-    hidden: { scaleY: 0, opacity: 0 },
-    visible: {
-      scaleY: 1,
-      opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  const contentVariants: Variants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, delay: 0.3, ease: "easeOut" },
-    },
-  };
+export default function HomepageSections() {
   return (
-    <div className="flex flex-col gap-10 md:gap-15 lg:gap-20 my-0 md:my-20">
-      <EnhancedHomepageSectionTitle title="Projects">
-        <div className="sm:-mt-10 md:mt-0">
-          <div className="h-[55rem] md:h-[60rem] relative overflow-hidden">
-            <ProjectListings />
-            <div className="absolute bottom-0 w-full h-[10rem] z-20 bg-gradient-to-b from-transparent to-white" />
-          </div>
-          <div className="flex justify-center my-8">
-            <PageNavigationButton
-              title="View all recent projects"
-              action={() => router.push("/projects")}
-            />
-          </div>
+    <>
+      <section id="selected-work" className="section" aria-labelledby="selected-work-title">
+        <div className="section-heading">
+          <div><p className="eyebrow">A few things I’ve built</p><h2 id="selected-work-title">Selected work<span className="section-count">04</span></h2></div>
+          <Link href="/projects" className="text-link">All projects <GoArrowRight aria-hidden="true" /></Link>
         </div>
-      </EnhancedHomepageSectionTitle>
-
-      <EnhancedHomepageSectionTitle title="My Profile">
-        <div ref={sectionRef} className="mt-10">
-          <div className="relative h-[20rem] md:h-[30rem] flex md:gap-10 gap-5 overflow-hidden rounded-2xl bg-white/50 backdrop-blur-sm p-6 md:p-8 ">
-            {/* Left decorative stripe with animated gradient */}
-            <motion.div
-              variants={stripeVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="w-10 h-full rounded-2xl bg-gradient-to-b from-green-400 via-green-500 to-blue-500 shadow-lg"
-            >
-              {/* Optional pulsing dot or line inside the stripe */}
-              <motion.div
-                animate={{
-                  y: ["0%", "100%", "0%"],
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="w-full h-1/3 bg-white/30 rounded-full blur-sm"
-              />
-            </motion.div>
-
-            {/* Right side – MyStory content with fade effect */}
-            <motion.div
-              variants={contentVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="flex-1 overflow-y-auto scroll-m-0 pr-2 custom-scrollbar"
-            >
-              <MyStory />
-            </motion.div>
-
-            {/* Fade gradient at the bottom (exactly as original) */}
-            <div className="absolute bottom-0 left-0 w-full h-[10rem] pointer-events-none bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
-
-            {/* Subtle floating background decoration */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-green-200 rounded-full blur-3xl opacity-30 -z-10" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-blue-200 rounded-full blur-3xl opacity-30 -z-10" />
-          </div>
-
-          {/* View Profile button with consistent styling */}
-          <div className="flex justify-center my-8">
-            <PageNavigationButton
-              title="View profile"
-              action={() => router.push("/about-me")}
-            />
-          </div>
-        </div>
-      </EnhancedHomepageSectionTitle>
-    </div>
+        <ProjectListings limit={4} headingLevel="h3" />
+        <Link href="/projects" className="button button-secondary projects-more">View all 8 projects <GoArrowRight aria-hidden="true" /></Link>
+      </section>
+      <section className="about-preview section" aria-labelledby="about-preview-title">
+        <div><p className="eyebrow">A little about me</p><h2 id="about-preview-title">Curious by nature.<br />An engineer by practice.</h2></div>
+        <div className="about-preview-copy"><p>I started learning web development in 2020 and have been building ever since. My work spans marketing websites and the business tools that help teams manage people, payroll, and performance.</p><p>I care about the details: readable code, accessible interfaces, and interactions that feel natural.</p><Link href="/about-me" className="text-link">More about me <GoArrowRight aria-hidden="true" /></Link></div>
+      </section>
+      <section className="contact-callout" aria-labelledby="contact-callout-title">
+        <div><p className="eyebrow">Have something in mind?</p><h2 id="contact-callout-title">Let’s make it happen.</h2><p>Tell me about your idea. I’d love to help bring it to life.</p></div>
+        <Link href="/contact" className="button button-primary">Get in touch <GoArrowUpRight aria-hidden="true" /></Link>
+      </section>
+    </>
   );
-};
-
-export default HomepageSections;
+}

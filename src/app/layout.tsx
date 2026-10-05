@@ -1,63 +1,39 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-
+import { Geist } from "next/font/google";
 import "./globals.css";
-
-import { Toaster } from "sonner";
 import FooterModule from "./components/footer";
 import NavBar from "./components/navBar";
 
-const poppins = Poppins({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  variable: "--font-geist",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Stanley Duye | Portfolio",
-  description: "Software Engineer",
+  metadataBase: new URL("https://duyestanley.netlify.app"),
+  title: { default: "Stanley Duye | Frontend Engineer", template: "%s | Stanley Duye" },
+  description: "Stanley Duye is a frontend engineer building thoughtful, accessible websites and applications with React, Next.js, and TypeScript.",
   icons: "/favicon.ico",
   openGraph: {
-    title: "Stanley Duye | Portfolio",
-    description: "Software Engineer",
+    title: "Stanley Duye | Frontend Engineer",
+    description: "Thoughtful interfaces, built with care. Explore selected work by Stanley Duye.",
     url: "https://duyestanley.netlify.app",
-    siteName: "Stanley Duye's Portfolio",
-    images: [
-      {
-        url: "https://duyestanley.netlify.app/meta-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Stanley Duye's photo",
-      },
-    ],
+    siteName: "Stanley Duye’s Portfolio",
+    images: [{ url: "/meta-image.jpg", width: 1200, height: 630, alt: "Stanley Duye" }],
     locale: "en_US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Stanley Duye | Portfolio",
-    description: "Software Engineer",
-    images: ["https://duyestanley.netlify.app/meta-image.jpg"],
-  },
+  twitter: { card: "summary_large_image", title: "Stanley Duye | Frontend Engineer", description: "Thoughtful interfaces, built with care.", images: ["/meta-image.jpg"] },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased bg-[#fff] min-h-screen flex flex-col`}
-      >
-        <Toaster position="top-right" richColors />
+      <body className={geist.variable}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <NavBar />
-        <main className="flex-grow">
-          <div className="m-auto max-w-6xl px-5 flex flex-col gap-10 my-20">
-            {children}
-          </div>
-        </main>
+        <main id="main-content" className="container" tabIndex={-1}>{children}</main>
         <FooterModule />
       </body>
     </html>
