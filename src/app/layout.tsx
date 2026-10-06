@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import FooterModule from "./components/footer";
 import NavBar from "./components/navBar";
+import MotionObserver from "./components/MotionObserver";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -29,12 +30,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={geist.variable}>
         <a href="#main-content" className="skip-link">Skip to content</a>
         <NavBar />
         <main id="main-content" className="container" tabIndex={-1}>{children}</main>
         <FooterModule />
+        <MotionObserver />
       </body>
     </html>
   );

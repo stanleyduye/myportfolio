@@ -76,17 +76,19 @@ export default function ProjectListings({ limit, headingLevel = "h2" }: Props) {
   return (
     <div className="project-grid">
       {visibleProjects.map((project, index) => (
-        <a key={project.id} data-project-card href={project.link} target="_blank" rel="noopener noreferrer" className="project-card" aria-label={["View", project.title, "website (opens in a new tab)"].join(" ")}>
-          <div className="project-image">
-            <Image src={project.image} alt={[project.title, "website preview"].join(" ")} fill sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1199px) calc((100vw - 80px) / 2), 544px" className="project-screenshot" />
-          </div>
-          <div className="project-content">
-            <div className="project-meta"><span>{project.category}</span><span className="project-number">{String(index + 1).padStart(2, "0")}</span></div>
-            <Heading className="project-title">{project.title}</Heading>
-            <p className="project-description">{project.description}</p>
-            <span className="project-visit">View website <GoArrowUpRight aria-hidden="true" /></span>
-          </div>
-        </a>
+        <div key={project.id} className="project-reveal" data-reveal data-reveal-delay={index % 2}>
+          <a data-project-card href={project.link} target="_blank" rel="noopener noreferrer" className="project-card" aria-label={["View", project.title, "website (opens in a new tab)"].join(" ")}>
+            <div className="project-image">
+              <Image src={project.image} alt={[project.title, "website preview"].join(" ")} fill sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1199px) calc((100vw - 80px) / 2), 544px" className="project-screenshot" />
+            </div>
+            <div className="project-content">
+              <div className="project-meta"><span>{project.category}</span><span className="project-number">{String(index + 1).padStart(2, "0")}</span></div>
+              <Heading className="project-title">{project.title}</Heading>
+              <p className="project-description">{project.description}</p>
+              <span className="project-visit">View website <GoArrowUpRight aria-hidden="true" /></span>
+            </div>
+          </a>
+        </div>
       ))}
     </div>
   );

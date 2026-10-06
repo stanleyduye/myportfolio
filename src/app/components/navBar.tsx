@@ -22,7 +22,11 @@ export default function NavBar() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const desktop = window.matchMedia("(min-width: 768px)");
-    const closeOnResize = () => { if (desktop.matches) dialogRef.current?.close(); };
+    const closeOnResize = () => {
+      if (!desktop.matches || !dialogRef.current) return;
+      dialogRef.current.dataset.animated = "false";
+      dialogRef.current.close();
+    };
     desktop.addEventListener("change", closeOnResize);
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -30,7 +34,17 @@ export default function NavBar() {
     };
   }, [isOpen]);
 
-  const closeMenu = () => dialogRef.current?.close();
+  useEffect(() => {
+    if (!dialogRef.current?.open) return;
+    dialogRef.current.dataset.animated = "false";
+    dialogRef.current.close();
+  }, [pathname]);
+
+  const closeMenu = (event?: { detail: number }) => {
+    if (!dialogRef.current) return;
+    if (event?.detail === 0) dialogRef.current.dataset.animated = "false";
+    dialogRef.current.close();
+  };
 
   return (
     <header className="site-header">
@@ -51,7 +65,7 @@ export default function NavBar() {
         <dialog ref={dialogRef} id="mobile-navigation" className="mobile-menu" aria-label="Navigation menu" onClick={event => { if (event.target === event.currentTarget) {
           const rect = event.currentTarget.getBoundingClientRect();
           if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeMenu();
-        } }} onClose={() => { setIsOpen(false); triggerRef.current?.focus({ preventScroll: true }); }}>
+        } }} onCancel={() => { if (dialogRef.current) dialogRef.current.dataset.animated = "false"; }} onClose={() => { setIsOpen(false); triggerRef.current?.focus({ preventScroll: true }); }}>
           <div className="mobile-menu-heading"><button type="button" className="icon-button" onClick={closeMenu} aria-label="Close navigation menu" autoFocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" /></svg></button></div>
           <nav aria-label="Mobile navigation">
             {navItems.map(item => <Link key={item.href} href={item.href} onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}

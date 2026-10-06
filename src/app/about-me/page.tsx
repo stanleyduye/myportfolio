@@ -17,12 +17,12 @@ export default function AboutModule() {
     <section className="page-section">
       <PageTitle eyebrow="The person behind the pixels" title="Always learning. Always building." paragraph="I’m Stanley, a frontend engineer who enjoys making complex things feel simple. I bring curiosity, care, and a practical approach to every project." />
       <div className="story-layout section">
-        <div><p className="eyebrow">My path into engineering</p><h2>A curiosity that<br />became a craft.</h2><div className="story-resume"><ResumeButton /></div></div>
+        <div data-reveal><p className="eyebrow">My path into engineering</p><h2>A curiosity that<br />became a craft.</h2><div className="story-resume"><ResumeButton /></div></div>
         <div className="story-copy"><MyStory /></div>
       </div>
       <section className="skills-section section" aria-labelledby="skills-title">
-        <div className="section-heading"><div><p className="eyebrow">My toolkit</p><h2 id="skills-title">Skills & strengths</h2></div><p className="section-note">The tools change. The care stays.</p></div>
-        <div className="skill-grid">{skillGroups.map(group => <div key={group.title} className="skill-group"><h3>{group.title}</h3><ul>{group.list.map(skill => <li key={skill}>{skill}</li>)}</ul></div>)}</div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow">My toolkit</p><h2 id="skills-title">Skills & strengths</h2></div><p className="section-note">The tools change. The care stays.</p></div>
+        <div className="skill-grid">{skillGroups.map((group, index) => <div key={group.title} className="skill-group" data-reveal data-reveal-delay={index % 2}><h3>{group.title}</h3><ul>{group.list.map(skill => <li key={skill}>{skill}</li>)}</ul></div>)}</div>
       </section>
     </section>
   );
